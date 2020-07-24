@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YourFinances.SpendingMirror.Domain\YourFinances.SpendingMirror.Domain.csproj" />
+    <ProjectReference Include="..\YourFinances.SpendingMirror.Infra.Data\YourFinances.SpendingMirror.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

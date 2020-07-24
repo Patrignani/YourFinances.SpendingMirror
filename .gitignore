@@ -1,0 +1,12 @@
+.vs/YourFinances.SpendingMirror/v16/
+src/YourFinances.SpendingMirror.Application.API/bin/
+src/YourFinances.SpendingMirror.Application.API/obj/
+src/YourFinances.SpendingMirror.Domain.Core/bin/
+src/YourFinances.SpendingMirror.Domain.Core/obj/
+src/YourFinances.SpendingMirror.Infra.Data/obj/
+src/YourFinances.SpendingMirror.Infra.Data/bin/
+src/YourFinances.SpendingMirror.Infra.CrossCutting/obj/
+src/YourFinances.SpendingMirror.Infra.CrossCutting/bin/
+src/YourFinances.SpendingMirror.Domain/obj/
+src/YourFinances.SpendingMirror.Domain/bin/
+.vs/YourFinances.SpendingMirror/DesignTimeBuild/.dtbcache

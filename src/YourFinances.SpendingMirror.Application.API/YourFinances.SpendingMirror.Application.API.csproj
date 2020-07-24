@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Midlleware\Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YourFinances.SpendingMirror.Infra.CrossCutting\YourFinances.SpendingMirror.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
+
+</Project>

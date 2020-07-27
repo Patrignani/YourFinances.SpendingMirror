@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MongoDB.Driver;
 using Npgsql;
 using System;
+using System.Collections.Generic;
 using YourFinances.SpendingMirror.Domain.Core.Interfaces;
+
 
 namespace YourFinances.SpendingMirror.Infra.Data.Configuration
 {
@@ -23,7 +26,12 @@ namespace YourFinances.SpendingMirror.Infra.Data.Configuration
 
         private void ServiceData(IServiceCollection services, IConfiguration configuration)
         {
+            var client = new MongoClient(new MongoUrl(configuration.GetSection("MongoDB:ConnectionString").Value));
+            var db = client.GetDatabase(configuration.GetSection("MongoDB:Name").Value);
+
             services.AddSingleton(new NpgsqlConnectionStringBuilder(configuration.GetConnectionString("YourFinacesServices")));
+            services.AddSingleton<IUnitOfWork, UnitOfWork>(_ 
+                => new UnitOfWork(new NpgsqlConnection(configuration.GetConnectionString("YourFinacesServices")), db));
         }
 
         #region Banco de Dados
@@ -32,6 +40,7 @@ namespace YourFinances.SpendingMirror.Infra.Data.Configuration
             using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var connectionStringBuilder = scope.ServiceProvider.GetRequiredService<NpgsqlConnectionStringBuilder>();
+
                 RegisterDabase(connectionStringBuilder);
                 using (var connection = new NpgsqlConnection(connectionStringBuilder.ConnectionString))
                 {

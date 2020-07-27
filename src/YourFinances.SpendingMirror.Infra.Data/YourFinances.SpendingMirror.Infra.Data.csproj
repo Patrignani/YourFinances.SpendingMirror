@@ -6,15 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Dapper.SqlBuilder" Version="2.0.35" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
     <PackageReference Include="Npgsql" Version="4.1.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\YourFinances.SpendingMirror.Domain.Core\YourFinances.SpendingMirror.Domain.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Configuration\StartDataBase\" />
   </ItemGroup>
 
 </Project>
